@@ -1,17 +1,15 @@
 <!-- "Contact" section-->
 <section id="contact" class="contact bg-primary">
     <div class="container">
-        <h2>We <i class="fa fa-heart"></i> new friends!</h2>
+        <h2>${page.contact.heading}</h2>
         <ul class="list-inline list-social">
-            <li class="social-twitter">
-                <a href="#"><i class="fa fa-twitter"></i></a>
-            </li>
-            <li class="social-facebook">
-                <a href="#"><i class="fa fa-facebook"></i></a>
-            </li>
-            <li class="social-google-plus">
-                <a href="#"><i class="fa fa-google-plus"></i></a>
-            </li>
+            <% page.contact.social.each { Map socialButton -> %>
+                <li class="${socialButton.css_class}">
+                    <a href="${socialButton.link}">
+                        <i class="fa ${socialButton.fontawesome_icon_class}"></i>
+                    </a>
+                </li>
+            <% } %>
         </ul>
     </div>
 </section>
