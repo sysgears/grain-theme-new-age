@@ -36,4 +36,23 @@ class ThemeTagLib {
 
         model.str.replace(/ /, /-/).toLowerCase()
     }
+
+    /**
+     * Groups elements of a given list by pairs and returns the list of pairs.
+     *
+     * @attr list a target list to be processed
+     */
+    def toListOfPairs = { Map model ->
+
+        if (!model.list) throw new IllegalArgumentException('Tag [toListOfPairs] is missing required attribute [list]')
+
+        def list = model.list
+
+        def pairedElems = []
+        for (int i = 0; i < list.size(); i++) {
+            pairedElems << [list[i], list[(++i)]]
+        }
+
+        pairedElems
+    }
 }
