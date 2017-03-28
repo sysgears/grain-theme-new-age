@@ -1,17 +1,11 @@
 <!--Footer-->
 <footer>
     <div class="container">
-        <p>&copy; 2016 Start Bootstrap. All Rights Reserved.</p>
+        <p>${page.footer.copyright}</p>
         <ul class="list-inline">
-            <li>
-                <a href="#">Privacy</a>
-            </li>
-            <li>
-                <a href="#">Terms</a>
-            </li>
-            <li>
-                <a href="#">FAQ</a>
-            </li>
+            <% page.footer.links.each { Map link -> %>
+                <li> <a href="${link.link}">${link.title}</a> </li>
+            <% } %>
         </ul>
     </div>
 </footer>
