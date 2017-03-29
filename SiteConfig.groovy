@@ -57,6 +57,9 @@ ruby {
     //ruby_gems = '2.2.2'
 }
 
+//Exclude *.psd files from processing during "generate" task.
+binary_files << /(?i).*\.psd/
+
 // Deployment settings.
 s3_bucket = '' // your S3 bucket name
 deploy_s3 = "s3cmd sync --acl-public --reduced-redundancy ${destination_dir}/ s3://${s3_bucket}/"
