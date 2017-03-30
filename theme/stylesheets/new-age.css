@@ -351,6 +351,11 @@ section.contact ul.list-social li a {
   border-radius: 100%;
   color: white;
 }
+
+section.contact ul.list-social li {
+  padding-bottom: 10px;
+}
+
 section.contact ul.list-social li.social-twitter a {
   background-color: #1da1f2;
 }
