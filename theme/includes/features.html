@@ -28,28 +28,18 @@
 
             <div class="col-md-8">
                 <div class="container-fluid">
-                    <% toListOfPairs(list: page.features.features_list).each { pairOfFeatures ->
-                    def leftFeature = pairOfFeatures.get(0)
-                    def rightFeature = pairOfFeatures.get(1)
-                    %>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="feature-item">
-                                <i class="${leftFeature.icon} text-primary"></i>
-                                <h3>${leftFeature.title}</h3>
-                                <p class="text-muted">${leftFeature.description}</p>
-                            </div>
+                    <% page.features.features_list.collate(2, 2, true).each { pairOfFeatures -> %>
+                        <div class="row">
+                            <% pairOfFeatures.each { feature -> %>
+                                <div class="col-md-6">
+                                    <div class="feature-item">
+                                        <i class="${feature.icon} text-primary"></i>
+                                        <h3>${feature.title}</h3>
+                                        <p class="text-muted">${feature.description}</p>
+                                    </div>
+                                </div>
+                            <% } %>
                         </div>
-                        <% if (rightFeature) {  %>
-                        <div class="col-md-6">
-                            <div class="feature-item">
-                                <i class="${rightFeature.icon} text-primary"></i>
-                                <h3>${rightFeature.title}</h3>
-                                <p class="text-muted">${rightFeature.description}</p>
-                            </div>
-                        </div>
-                        <% } %>
-                    </div>
                     <% } %>
                 </div>
             </div>
