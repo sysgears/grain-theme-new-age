@@ -28,7 +28,7 @@ environments {
     }
     prod {
         log.info 'Production environment is used'
-        url = '' // site URL, for example http://www.example.com
+        url = '.' // site URL, for example http://www.example.com
         show_unpublished = false
         features {
             minify_xml = false
@@ -56,6 +56,8 @@ ruby {
     //cmd_candidates = ['ruby', 'ruby1.8.7', 'ruby1.9.3', 'user.home/.rvm/bin/ruby']
     //ruby_gems = '2.2.2'
 }
+
+generate_absolute_links = true;
 
 //Exclude *.psd files from processing during "generate" task.
 binary_files << /(?i).*\.psd/
