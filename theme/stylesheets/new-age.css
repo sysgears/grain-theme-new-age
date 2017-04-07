@@ -146,6 +146,16 @@ p {
     color: #fdcc52;
   }
 }
+
+@media (max-height: 600px) and (min-width: 768px) {
+  header .header-content {
+    text-align: center;
+    padding: 150px 0 50px;
+    position: relative;
+    min-height: 600px;
+  }
+}
+
 header {
   position: relative;
   width: 100%;
