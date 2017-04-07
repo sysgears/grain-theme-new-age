@@ -330,6 +330,16 @@ section.cta .cta-content h2 {
     font-size: 80px;
   }
 }
+@media (max-width: 768px) {
+    section.cta .cta-content {
+        text-align: center;
+    }
+    section.cta .cta-content h2 {
+        margin: 0 auto 25px;
+        color: white;
+        font-size: 50px;
+    }
+}
 section.cta .overlay {
   height: 100%;
   width: 100%;
