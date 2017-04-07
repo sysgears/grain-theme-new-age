@@ -14,9 +14,9 @@ class ThemeTagLib {
     }
 
     /**
-     * Converts a date to XML date time format: 2013-12-31T12:49:00+07:00
+     * Converts a date to XML date time format: 2013-12-31T12:49:00+07:00.
      *
-     * @attr date the date to convert
+     * @attr date the date to convert.
      */
     def xmlDateTime = { Map model ->
         if (!model.date) throw new IllegalArgumentException('Tag [xmlDateTime] is missing required attribute [date]')
@@ -29,7 +29,7 @@ class ThemeTagLib {
     /**
      * Converts a string to snake case. For example: "Test String" -> test_string.
      *
-     * @attr str the string to convert
+     * @attr str the string to convert.
      */
     def toSnakeCase = { Map model ->
         if (!model.str) throw new IllegalArgumentException('Tag [toSnakeCase] is missing required attribute [str]')

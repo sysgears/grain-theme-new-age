@@ -84,9 +84,9 @@ class GHPagesDeployer {
     /**
      * Determines whether gh-pages branch exists for given repo.
      *
-     * @param ant AntBuilder instance
-     * @param ghPagesUrl GitHub repo url
-     * @return true if branch exists, false otherwise
+     * @param ant AntBuilder instance.
+     * @param ghPagesUrl GitHub repo url.
+     * @return true if branch exists, false otherwise.
      */
     private def ghPagesBranchExists(AntBuilder ant, String ghPagesUrl) {
         ant.exec(executable: 'git', outputproperty: 'gitLsOutput') {
@@ -98,9 +98,9 @@ class GHPagesDeployer {
     /**
      * Returns the list of files to be deleted after deploy.
      *
-     * @param ant AntBuilder instance
-     * @param cacheDeployDir cache deploy dir
-     * @return list of files
+     * @param ant AntBuilder instance.
+     * @param cacheDeployDir cache deploy dir.
+     * @return list of files.
      */
     private def getListOfDeletedFiles(AntBuilder ant, String cacheDeployDir) {
         ant.exec(executable: 'git', outputproperty: 'gitStatusOutput', dir: cacheDeployDir) {
@@ -121,9 +121,9 @@ class GHPagesDeployer {
     /**
      * Asks whether user wants to continue deploy.
      *
-     * @param ant AntBuilder instance
-     * @param filesToBeDeleted list of the files to be removed
-     * @return true, if user confirms he wants to continue deploy, false otherwise
+     * @param ant AntBuilder instance.
+     * @param filesToBeDeleted list of the files to be removed.
+     * @return true, if user confirms he wants to continue deploy, false otherwise.
      */
     private def askContinueDeploy(AntBuilder ant, List filesToBeDeleted) {
         def fileList = new StringBuilder()

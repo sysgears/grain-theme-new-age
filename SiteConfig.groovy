@@ -7,7 +7,7 @@ import com.sysgears.theme.taglib.ThemeTagLib
  * This setting defines the character encoding of html pages, and therefore should match
  * the character encoding of the site files on a filesystem
  */
-html_encoding = 'utf-8' // it is passed to the mata charset attribute of the default page layout
+html_encoding = 'utf-8'
 
 /**
  * Resource mapper and tag libs.
@@ -20,71 +20,71 @@ tag_libs = [ThemeTagLib]
  */
 features {
     /**
-     * Defines the highlighting feature. Accept the following values:
+     * Defines the highlighting feature. Accepts the following values:
      *  - none - code highlighting is disabled for the theme.
-     *  - pygments - code highlighting is enabled and achieved with Python Pygments.
+     *  - pygments - code highlighting is enabled and provided by Python Pygments.
      */
     highlight = 'none'
 
     /**
-     * Defines Compass behavior. Compass is a Ruby gem, used by Grain for processing SASS/SCSS styles.
-     * This property accepts the following values:
-     * - auto, ruby, jruby - these do the same thing, actually. They all use the specified Ruby interpreter (or fall
-     *                       back to Jruby, if no interpreter is defined) to install the Compass Gem and start the
-     *                       Compass service for processing of SASS/SCSS.
+     * Defines Compass behavior. This property accepts the following values:
+     * - auto, ruby, jruby - Default value. For any of these values the specified Ruby interpreter (ruby.interpreter
+     *                       config value)  is used. Otherwise, if no interpreter is defined, falls back to JRuby.
+     * - shell - Uses command shell to execute compass.
+     * - none - compass is disabled.
      */
     compass = 'none'
 
     /**
-     * Defines the way Markdown documents should be processed. Accepts the following values:
-     * - txtmark - default value. This way TxtMark is used for
-     *      markdown processing.
+     * Defines the tool for Markdown documents processing. Accepts the following values:
+     * - txtmark - default value. This way TxtMark is used for markdown processing.
      * - pegdown - Use Pegdown for markdown documents processing.
      */
     markdown = 'txtmark'
 }
 
 /**
- * Defines the set of variables, appended to the 'site' global variable,
- * depending on environment that is used.
+ * Defines the set of variables, appended to the 'site' global variable, depending on environment that is used.
  */
 environments {
 
     /**
-     * Configurations, which is only available in dev mode.
+     * Dev configuration.
      */
     dev {
         log.info 'Development environment is used'
 
         /**
-         * Base URL for the site
+         * Base URL for the site. If the generate_absolute_links config value is set to "true", this value will be
+         * automatically prepended to any asset path of the theme.
          */
         url = "http://localhost:${jetty_port}"
 
         /**
-         * Should posts with "published = false" be included in generated site sources.
+         * Should posts with "published = false" be processed.
          */
         show_unpublished = true
     }
 
     /**
-     * Configurations, which only available in prod mode (for "generate" task).
+     * Prod configuration.
      */
     prod {
         log.info 'Production environment is used'
 
         /**
-         * Base URL for the site
+         * Base URL for the site. If the generate_absolute_links config value is set to "true", this value will be
+         * automatically prepended to any asset path of the theme.
          */
-        url = '.' // site URL, for example http://www.example.com
+        url = '.'
 
         /**
-         * Should posts with "published = false" be included in generated site sources.
+         * Should posts with "published = false" be processed.
          */
         show_unpublished = false
 
         /**
-         * List of features configurations for production mode.
+         * List of features configurations.
          */
         features {
             minify_xml = false
@@ -111,17 +111,16 @@ environments {
 python {
 
     /**
-     * An interpreter that is used for executig Python scripts, since some pieces of functionality of the theme (e.g. Python Pygments) are
-     * achieved through utilizing capabilities of related Ruby gems. This property accepts the following values:
-     * - auto - Default value. Uses Python that is installed on your system. If its not available, then falls back to Jython.
+     * An interpreter that is used for executing Python scripts (e.g. for Python Pygments). This property accepts the following values:
      * - python - Uses Python that is installed on your system.
      * - jython - uses Jython integrated in Grain.
+     * - auto - Default value. Uses Python that is installed on your system. If its not available, then falls back to Jython.
      */
-    interpreter = 'jython' //
+    interpreter = 'jython'
 
     /**
-     * If native system python is used, then this value defines the paths to python executables. If any of these fails,
-     * then the attempt to use next one takes place.
+     * If native system python distribution is used, then this value defines the paths to python executables. If any of
+     * these fails, then the attempt to use next one takes place.
      */
     //cmd_candidates = ['python2', 'python', 'python2.7']
 
@@ -137,16 +136,16 @@ python {
 ruby {
 
     /**
-     * An interpreter that is used used for executing Ruby scripts, since some pieces of functionality of the theme (e.g. AsciiDoc and Compass) are
-     * achieved through utilizing capabilities of related Ruby gems. This property accepts the following values:
-     * - auto - Default value. Uses Ruby that is installed on your system. If its not available, then falls back to JRuby.
+     * An interpreter that is used used for executing Ruby scripts (e.g. for AsciiDoc and Compass). This property accepts
+     * the following values:
      * - ruby - uses Ruby that is installed on your system.
      * - jruby - uses jRuby integrated in Grain.
+     * - auto - Default value. Uses Ruby that is installed on your system. If its not available, then falls back to JRuby.
      */
     interpreter = 'jruby'
 
     /**
-     * If native system Ruby is used, then this value defines the paths to Ruby executables. If any of these fails,
+     * If native system Ruby distribution is used, then this value defines the paths to Ruby executables. If any of these fails,
      * then the attempt to use next one takes place.
      */
     //cmd_candidates = ['ruby', 'ruby1.8.7', 'ruby1.9.3', 'user.home/.rvm/bin/ruby']

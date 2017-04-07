@@ -37,7 +37,7 @@ class ResourceMapper {
     }
 
     /**
-     * Fills in page `date` and `updated` fields 
+     * Fills in page `date` and `updated` fields .
      */
     private def fillDates = { Map it ->
         def update = [date: it.date ? Date.parse(site.datetime_format, it.date) : new Date(it.dateCreated as Long),
