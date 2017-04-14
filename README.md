@@ -1,3 +1,5 @@
+![Banner](https://raw.githubusercontent.com/sysgears/grain-theme-new-age/master/banner.jpg)
+
 # Grain Bootstrap Theme - New Age
 
 This one page [Grain] theme is based on Start Bootstrap [New Age Template].
