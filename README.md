@@ -5,7 +5,7 @@ Grain Bootstrap Theme - New Age
 
 This one page [Grain] theme is based on Start Bootstrap [New Age Template].
 
-Please, refer to the [documentation] for further details.
+Please, refer to the [theme page] and [documentation] for further details.
 
 Contributing
 ============
@@ -102,3 +102,4 @@ Grain Bootstrap Theme New Age is licensed under the terms of the
 [Developer Certificate of Origin]: https://raw.github.com/sysgears/grain/master/DCO
 [New Age Template]: http://startbootstrap.com/template-overviews/new-age/
 [documentation]: http://sysgears.com/grain/docs/latest/
+[theme page]: http://sysgears.com/grain/themes/new-age/
