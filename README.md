@@ -3,6 +3,8 @@
 Grain Bootstrap Theme - New Age
 ===============================
 
+[![Twitter Follow](https://img.shields.io/twitter/follow/sysgears.svg?style=social)](https://twitter.com/sysgears)
+
 This one page [Grain] theme is based on Start Bootstrap [New Age Template].
 
 Please, refer to the [theme page] and [documentation] for further details.
